@@ -50,7 +50,7 @@ jobs:
     - name: web docker build and push
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker build -f Dockerfile-dev -t ${{ secrets.DOCKER_REPO }}/second-eyes-web .
+        docker build -t ${{ secrets.DOCKER_REPO }}/second-eyes-web .
         docker push ${{ secrets.DOCKER_REPO }}/second-eyes-web
 
     ## docker compose up
