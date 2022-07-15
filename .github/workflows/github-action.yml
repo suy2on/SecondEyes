@@ -61,9 +61,9 @@ jobs:
         username: ubuntu
         key: ${{ secrets.KEY }}
         script: |
-          docker rm -f $(docker ps -qa)
-          docker pull ${{ secrets.DOCKER_REPO }}/second-eyes-web
-          docker pull ${{ secrets.DOCKER_REPO }}/second-eyes-nginx
+          sudo docker rm -f $(docker ps -qa)
+          sudo docker pull ${{ secrets.DOCKER_REPO }}/second-eyes-web
+          sudo docker pull ${{ secrets.DOCKER_REPO }}/second-eyes-nginx
           docker-compose up -d
           docker image prune -f
 
